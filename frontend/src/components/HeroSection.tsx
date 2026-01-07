@@ -1,9 +1,14 @@
 // components/HeroSection.tsx
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { FiCheckCircle, FiArrowRight, FiTrendingUp, FiUsers } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  FiCheckCircle,
+  FiArrowRight,
+  FiTrendingUp,
+  FiUsers,
+} from "react-icons/fi";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -56,7 +61,7 @@ const HeroSection = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
           >
-            Organize Your Work,{' '}
+            Organize Your Work,{" "}
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Master Your Time
             </span>
@@ -67,8 +72,9 @@ const HeroSection = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto"
           >
-            TaskFlow is the intelligent todo app that helps teams and individuals
-            organize, prioritize, and execute tasks with unprecedented efficiency.
+            TaskFlow is the intelligent todo app that helps teams and
+            individuals organize, prioritize, and execute tasks with
+            unprecedented efficiency.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -76,22 +82,24 @@ const HeroSection = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl flex items-center group cursor-pointer"
-            >
-              Start Free Trial
-              <FiArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
-            </motion.button>
+            <Link href={"/dashboard"}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl flex items-center group cursor-pointer"
+              >
+                Start Free Trial
+                <FiArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
+              </motion.button>
+            </Link>
             <Link href={"#how-it-works"}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white text-gray-800 border border-gray-200 rounded-full font-semibold text-lg shadow hover:shadow-lg cursor-pointer"
-            >
-              Watch Demo
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-white text-gray-800 border border-gray-200 rounded-full font-semibold text-lg shadow hover:shadow-lg cursor-pointer"
+              >
+                Watch Demo
+              </motion.button>
             </Link>
           </motion.div>
 
@@ -101,9 +109,17 @@ const HeroSection = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
           >
             {[
-              { icon: <FiUsers />, value: '50K+', label: 'Active Users' },
-              { icon: <FiCheckCircle />, value: '98%', label: 'Task Completion Rate' },
-              { icon: <FiTrendingUp />, value: '40%', label: 'Productivity Increase' },
+              { icon: <FiUsers />, value: "50K+", label: "Active Users" },
+              {
+                icon: <FiCheckCircle />,
+                value: "98%",
+                label: "Task Completion Rate",
+              },
+              {
+                icon: <FiTrendingUp />,
+                value: "40%",
+                label: "Productivity Increase",
+              },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -115,7 +131,9 @@ const HeroSection = () => {
                     {stat.icon}
                   </div>
                 </div>
-                <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
+                <div className="text-3xl font-bold text-gray-900">
+                  {stat.value}
+                </div>
                 <div className="text-gray-600">{stat.label}</div>
               </motion.div>
             ))}
@@ -148,7 +166,10 @@ const HeroSection = () => {
                     <div className="h-8 w-8 bg-blue-100 rounded-full"></div>
                   </div>
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="flex items-center mb-3 p-3 rounded-lg border border-gray-100 hover:bg-gray-50">
+                    <div
+                      key={i}
+                      className="flex items-center mb-3 p-3 rounded-lg border border-gray-100 hover:bg-gray-50"
+                    >
                       <div className="h-5 w-5 border-2 border-gray-300 rounded-full mr-3"></div>
                       <div className="flex-1">
                         <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded w-3/4 mb-2"></div>
@@ -158,7 +179,7 @@ const HeroSection = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 {/* Progress Chart Mock */}
                 <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6">
                   <div className="h-6 w-40 bg-gradient-to-r from-gray-200 to-gray-300 rounded mb-6"></div>
@@ -177,7 +198,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Floating Elements */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
@@ -194,7 +215,7 @@ const HeroSection = () => {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2.5, delay: 0.5 }}
