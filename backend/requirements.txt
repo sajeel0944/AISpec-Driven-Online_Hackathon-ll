@@ -2,11 +2,11 @@ bcrypt==4.0.1
 fastapi[standard]>=0.127.0
 openai-agents>=0.6.4
 passlib>=1.7.4
-psycopg2>=2.9.11
+psycopg2-binary>=2.9.11
 rich>=14.2.0
 sqlmodel>=0.0.29
 pydantic==2.12.3
 pydantic-core==2.41.4
-python-multipart==0.0.9
+python-multipart>=0.0.18
 uvicorn==0.24.0
 python-dotenv==1.0.0
