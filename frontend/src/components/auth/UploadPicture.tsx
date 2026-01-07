@@ -1,4 +1,5 @@
 import React, { useRef, useState, type ChangeEvent } from "react";
+import Image from "next/image";
 
 // Cloudinary config
 const CLOUDINARY_UPLOAD_PRESET = String(
@@ -210,10 +211,12 @@ const UploadPicture = ({
         <div className="flex items-center gap-3 p-2 rounded-lg bg-gray-50 border border-gray-200">
           {/* Image Preview */}
           <div className="relative">
-            <img
+            <Image
               src={imageUrl}
               alt="Uploaded preview"
               className="w-12 h-12 rounded-md object-cover shadow-sm"
+              width={48}
+              height={48}
             />
 
             {/* Remove Button */}
