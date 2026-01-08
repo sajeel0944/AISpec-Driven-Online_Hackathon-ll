@@ -41,10 +41,10 @@ def send_otp_email(email: str) -> str | None:
         Support Team
         """)
 
-        # with smtplib.SMTP("smtp.gmail.com", 587) as server:
-        #     server.starttls()
-        #     server.login(EMAIL, EMAIL_APP_PASSWORDS)
-        #     server.send_message(msg)
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()
+            server.login(EMAIL, EMAIL_APP_PASSWORDS)
+            server.send_message(msg)
 
         return otp   # ✅ OTP return ho raha hai
 
