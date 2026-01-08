@@ -1,20 +1,17 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import VerifyForm from "@/components/auth/VerifyForm";
+import { redirect } from "next/navigation";
 
-export default function VerifyPage() {
-  const [email, setEmail] = useState<string | null>(null);
-  const router = useRouter();
+export default function VerifyPage(props: unknown) {
+  const { searchParams } = props as { searchParams?: Record<string, string | string[] | undefined> };
+  const emailParam = Array.isArray(searchParams?.email)
+    ? searchParams?.email[0]
+    : searchParams?.email;
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setEmail(params.get("email"));
-    if (!email) {
-      router.replace("/register");
-    }
-  }, []);
+  if (!emailParam) {
+    redirect("/register");
+  }
+
+  const email = emailParam ?? null;
 
   return (
     <div className="space-y-8">

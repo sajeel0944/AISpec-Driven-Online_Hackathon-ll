@@ -51,7 +51,7 @@ const RegisterForm: React.FC = () => {
               "Registration successful! Please check your email for verification code."
             );
             setTimeout(() => {
-              router.push(`/verify?email=${encodeURIComponent(data.email)}`);
+              router.push(`/verify?email=${data.email}`);
             }, 2000);
           } else {
             setError(result.message);
