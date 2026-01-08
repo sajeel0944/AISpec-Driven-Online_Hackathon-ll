@@ -21,4 +21,5 @@ def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
     print("Database and tables created.")
 
-# create_db_and_tables()  # Uncomment this line to create the database and tables when running the script
+if __name__ == "__main__":
+    create_db_and_tables()  

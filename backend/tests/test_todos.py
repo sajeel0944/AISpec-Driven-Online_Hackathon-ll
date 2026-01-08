@@ -8,75 +8,81 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from schema.todo_type import AddTodoSchema, TodoSchema
 from todos import Todo
 
-# --- Sample todo data ---
-todo_data = {
-    "title": "Finish homework",
-    "description": "Math and Science",
-    "status": "In Pending",
-    "priority": "Medium",
-    "created_at": "2025-12-25 12:00:00",
-    "due_date": "2025-12-26",
-    "tags": ["school", "urgent"],
-}
+def test_todo_crud_operations() -> None:
+    rich.print("[bold magenta]--- TESTING TODO CRUD OPERATIONS ---[/bold magenta]")
 
-# --- Create Todo object ---
-test_todo = Todo(
-    email="testuser@example.com",
-    todo=AddTodoSchema(**todo_data)
-)
+    # --- Sample todo data ---
+    todo_data = {
+        "title": "Finish homework",
+        "description": "Math and Science",
+        "status": "In Pending",
+        "priority": "Medium",
+        "created_at": "2025-12-25 12:00:00",
+        "due_date": "2025-12-26",
+        "tags": ["school", "urgent"],
+    }
 
-# -------------------------------------------------
-# 1️⃣ ADD TODO
-# -------------------------------------------------
+    # --- Create Todo object ---
+    test_todo = Todo(
+        email="testuser@example.com",
+        todo=AddTodoSchema(**todo_data)
+    )
 
-# add_response = test_todo.add_todo()
-# print("[green]Add Todo Response:[/green]")
-# print(add_response)
+    # -------------------------------------------------
+    # 1️⃣ ADD TODO
+    # -------------------------------------------------
 
-
-# -------------------------------------------------
-# 2️⃣ READ TODOS
-# -------------------------------------------------
-
-# get = test_todo.get_todos()
-# print("\n[cyan]Todos Retrieved:[/cyan]")
-# print(get)
+    add_response = test_todo.add_todo()
+    print("[green]Add Todo Response:[/green]")
+    print(add_response)
 
 
-# -------------------------------------------------
-# 3️⃣ UPDATE TODO
-# -------------------------------------------------
+    # -------------------------------------------------
+    # 2️⃣ READ TODOS
+    # -------------------------------------------------
 
-updated_todo_data = {
-    "id": 5,
-    "title": "Finish homework (UPDATED)",
-    "description": "Math, Science and English",
-    "status": "completed",              
-    "priority": "high",                 
-    "created_at": "2025-12-25 12:00:00",
-    "due_date": "2025-12-30",  
-    "tags": ["school", "done"] 
-}
-
-update_service = Todo(
-    email="testuser@example.com",
-    updated_data=TodoSchema(**updated_todo_data)
-)
-
-# update_response = update_service.update_todo()
-# print("\n[yellow]Update Todo Response:[/yellow]")
-# print(update_response)
+    get = test_todo.get_todos()
+    print("\n[cyan]Todos Retrieved:[/cyan]")
+    print(get)
 
 
-# -------------------------------------------------
-# 2️⃣ DELETE FIRST TODO
-# -------------------------------------------------
+    # -------------------------------------------------
+    # 3️⃣ UPDATE TODO
+    # -------------------------------------------------
 
-delete_service = Todo(
-    email="testuser@example.com",
-    todo_id=1
-)
+    updated_todo_data = {
+        "id": 5,
+        "title": "Finish homework (UPDATED)",
+        "description": "Math, Science and English",
+        "status": "completed",              
+        "priority": "high",                 
+        "created_at": "2025-12-25 12:00:00",
+        "due_date": "2025-12-30",  
+        "tags": ["school", "done"] 
+    }
 
-# delete_response = delete_service.delete_todo()
-# print("\n[yellow]Delete Todo Response:[/yellow]")
-# print(delete_response)
+    update_service = Todo(
+        email="testuser@example.com",
+        updated_data=TodoSchema(**updated_todo_data)
+    )
+
+    update_response = update_service.update_todo()
+    print("\n[yellow]Update Todo Response:[/yellow]")
+    print(update_response)
+
+
+    # -------------------------------------------------
+    # 2️⃣ DELETE FIRST TODO
+    # -------------------------------------------------
+
+    delete_service = Todo(
+        email="testuser@example.com",
+        todo_id=1
+    )
+
+    delete_response = delete_service.delete_todo()
+    print("\n[yellow]Delete Todo Response:[/yellow]")
+    print(delete_response)
+
+if __name__ == "__main__":
+    test_todo_crud_operations()
