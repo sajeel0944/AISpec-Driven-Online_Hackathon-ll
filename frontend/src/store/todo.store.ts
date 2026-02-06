@@ -1,7 +1,7 @@
 // store/todo.store.ts
 import { create } from 'zustand';
 import { Todo, TodoFilters } from '@/types/todo.types';
-import todoService from '@/lib/api/todo.service';
+import todoService from '@/api/todo/todo.service';
 
 interface TodoStore {
   todos: Todo[];

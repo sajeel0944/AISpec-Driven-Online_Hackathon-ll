@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+from typing import Dict, List, Optional
 from sqlmodel import create_engine, Session, select
 import os
 from dotenv import load_dotenv
@@ -22,7 +22,7 @@ class Todo:
     todo_id: Optional[int] = None
     updated_data: Optional[TodoSchema] = None
 
-    def add_todo(self):
+    def add_todo(self) -> Dict:
         try:
             with Session(engine) as session:
 
@@ -60,7 +60,7 @@ class Todo:
         except Exception as e:
             return {"status": "error", "message": str(e)}
         
-    def get_todos(self):
+    def get_todos(self) -> List[Dict]:
         try:
             with Session(engine) as session:
                 statement = select(userTodoData).where(
@@ -88,7 +88,7 @@ class Todo:
         except Exception as e:
             return []
         
-    def update_todo(self):
+    def update_todo(self) -> Dict:
         try:
             with Session(engine) as session:
 
@@ -121,7 +121,7 @@ class Todo:
         except Exception as e:
             return {"status": "error", "message": str(e)}
         
-    def delete_todo(self):
+    def delete_todo(self) -> Dict:
         try:
             if not self.todo_id:
                 return {"status": "error", "message": "Todo ID is required."}

@@ -1,5 +1,5 @@
 // lib/auth/auth.service.ts
-import ApiClient from "../api/client";
+import ApiClient from "../../api/todo/client";
 import {
   RegisterRequest,
   LoginRequest,

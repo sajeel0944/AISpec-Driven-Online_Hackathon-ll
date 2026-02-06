@@ -1,8 +1,11 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
+from ai_workflow.assistant import stream_agent_response
 from schema.api_type import AddTodoEndpointSchema, DeleteTodoEndpointSchema, LoginEndpointSchema, RegisterEndpointSchema, UpdateTodoEndpointSchema, VerifyEndpointSchema
+from schema.context_type import todoAgentApiSchema
 from todos import Todo
 from auth.auth import Auth
+from sse_starlette.sse import EventSourceResponse
 
 # --------------------------------------------------------------------
 
@@ -113,3 +116,30 @@ def delete_todo_endpoint(payload: DeleteTodoEndpointSchema):
     except Exception as e:
         print(e)
         return {"status": "error", "message": "Something went wrong"}
+    
+# --------------------------------------------------------------------
+
+
+@app.post("/todo/agent")
+async def todo_agent_api(payload: todoAgentApiSchema):
+    """
+    Frontend must send JSON:
+    {
+        "user_que": { ... AiMessage ... },
+        "user_data": { ... userInfoSchema ... }
+    }
+    """
+    try:
+        user_que = payload.user_message
+        user_data = payload.user_data
+
+        if not user_que or not user_data:
+            return "user_que and user_data are required"
+
+        return EventSourceResponse(
+            stream_agent_response(user_que, user_data),
+            media_type="text/event-stream"
+        )
+    except Exception as e:
+        print(e)
+        return "An error occurred while processing your request."
