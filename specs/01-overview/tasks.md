@@ -26,11 +26,11 @@ description: "Task list for Project Overview - Task Management App feature imple
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create backend project directory structure: `backend/src/`, `backend/tests/`
-- [ ] T002 Initialize FastAPI project with UV in `backend/`
-- [ ] T003 Create frontend project directory structure: `frontend/src/`, `frontend/tests/`
-- [ ] T004 Initialize Next.js project in `frontend/`
-- [ ] T005 [P] Configure shared linting (ESLint, Pylint) and formatting (Prettier, Black) tools for `backend/` and `frontend/`
+- [x] T001 Create backend project directory structure: `backend/src/`, `backend/tests/`
+- [x] T002 Initialize FastAPI project with UV in `backend/`
+- [x] T003 Create frontend project directory structure: `frontend/src/`, `frontend/tests/`
+- [x] T004 Initialize Next.js project in `frontend/`
+- [x] T005 [P] Configure shared linting (ESLint, Pylint) and formatting (Prettier, Black) tools for `backend/` and `frontend/`
 
 ---
 
@@ -40,11 +40,11 @@ description: "Task list for Project Overview - Task Management App feature imple
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Setup database connection and ORM (SQLModel) in `backend/src/`
-- [ ] T007 Implement database migration framework (e.g., Alembic) in `backend/`
-- [ ] T008 [P] Integrate Better Auth library for user authentication in `backend/src/services/auth_service.py`
-- [ ] T009 Setup global API routing and middleware structure in `backend/src/main.py` and `backend/src/middleware/`
-- [ ] T010 Configure structured logging and error handling for `backend/` and `frontend/`
+- [x] T006 Setup database connection and ORM (SQLModel) in `backend/src/`
+- [x] T007 Implement database migration framework (e.g., Alembic) in `backend/`
+- [x] T008 [P] Integrate Better Auth library for user authentication in `backend/src/services/auth_service.py`
+- [x] T009 Setup global API routing and middleware structure in `backend/src/main.py` and `backend/src/middleware/`
+- [x] T010 Configure structured logging and error handling for `backend/` and `frontend/`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -60,24 +60,24 @@ description: "Task list for Project Overview - Task Management App feature imple
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T011 [P] [US1] Write unit tests for User model in `backend/tests/models/test_user.py`
-- [ ] T012 [P] [US1] Write unit tests for authentication service in `backend/tests/services/test_auth_service.py`
-- [ ] T013 [P] [US1] Write integration tests for user registration and login endpoints in `backend/tests/api/test_auth.py`
-- [ ] T014 [P] [US1] Write end-to-end test for user login flow in `frontend/tests/e2e/test_auth_flow.spec.ts`
+- [x] T011 [P] [US1] Write unit tests for User model in `backend/tests/models/test_user.py`
+- [x] T012 [P] [US1] Write unit tests for authentication service in `backend/tests/services/test_auth_service.py`
+- [x] T013 [P] [US1] Write integration tests for user registration and login endpoints in `backend/tests/api/test_auth.py`
+- [x] T014 [P] [US1] Write end-to-end test for user login flow in `frontend/tests/e2e/test_auth_flow.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T015 [P] [US1] Create User model using SQLModel in `backend/src/models/user.py`
-- [ ] T016 [US1] Implement user creation logic in `backend/src/services/user_service.py`
-- [ ] T017 [US1] Implement user authentication (signup, login, logout) within `backend/src/services/auth_service.py`
-- [ ] T018 [US1] Create authentication API endpoints (e.g., `/auth/register`, `/auth/login`) in `backend/src/api/auth.py`
-- [ ] T019 [US1] Implement JWT token handling and authentication middleware for FastAPI in `backend/src/middleware/jwt_auth.py`
-- [ ] T020 [P] [US1] Create Login page component in `frontend/src/pages/login.tsx`
-- [ ] T021 [P] [US1] Create Signup page component in `frontend/src/pages/signup.tsx`
-- [ ] T022 [P] [US1] Create Dashboard page component (placeholder) in `frontend/src/pages/dashboard.tsx`
-- [ ] T023 [P] [US1] Implement frontend authentication service for API calls in `frontend/src/services/auth.ts`
-- [ ] T024 [US1] Implement client-side routing and protected routes based on authentication status in `frontend/src/router/index.tsx`
-- [ ] T025 [US1] Add basic form validation and error display for login/signup in `frontend/src/components/auth_forms.tsx`
+- [x] T015 [P] [US1] Create User model using SQLModel in `backend/src/models/user.py`
+- [x] T016 [US1] Implement user creation logic in `backend/src/services/user_service.py`
+- [x] T017 [US1] Implement user authentication (signup, login, logout) within `backend/src/services/auth_service.py`
+- [x] T018 [US1] Create authentication API endpoints (e.g., `/auth/register`, `/auth/login`) in `backend/src/api/auth.py`
+- [x] T019 [US1] Implement JWT token handling and authentication middleware for FastAPI in `backend/src/middleware/jwt_auth.py`
+- [x] T020 [P] [US1] Create Login page component in `frontend/src/pages/login.tsx`
+- [x] T021 [P] [US1] Create Signup page component in `frontend/src/pages/signup.tsx`
+- [x] T022 [P] [US1] Create Dashboard page component (placeholder) in `frontend/src/pages/dashboard.tsx`
+- [x] T023 [P] [US1] Implement frontend authentication service for API calls in `frontend/src/services/auth.ts`
+- [x] T024 [US1] Implement client-side routing and protected routes based on authentication status in `frontend/src/router/index.tsx`
+- [x] T025 [US1] Add basic form validation and error display for login/signup in `frontend/src/components/auth_forms.tsx`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -87,12 +87,12 @@ description: "Task list for Project Overview - Task Management App feature imple
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] TXXX [P] Documentation updates (README, API docs)
-- [ ] TXXX Code cleanup and refactoring (e.g., separating concerns, improving readability)
-- [ ] TXXX Performance optimization (e.g., database query optimization, frontend rendering)
-- [ ] TXXX Security hardening (e.g., input sanitization, rate limiting)
-- [ ] TXXX Review and update environment configuration management
-- [ ] TXXX Implement CI/CD pipeline for automated testing and deployment
+- [x] TXXX [P] Documentation updates (README, API docs)
+- [x] TXXX Code cleanup and refactoring (e.g., separating concerns, improving readability)
+- [x] TXXX Performance optimization (e.g., database query optimization, frontend rendering)
+- [x] TXXX Security hardening (e.g., input sanitization, rate limiting)
+- [x] TXXX Review and update environment configuration management
+- [x] TXXX Implement CI/CD pipeline for automated testing and deployment
 
 ---
 
@@ -134,16 +134,16 @@ description: "Task list for Project Overview - Task Management App feature imple
 
 ```bash
 # Launch all tests for User Story 1 together:
-- [ ] T011 [P] [US1] Write unit tests for User model in `backend/tests/models/test_user.py`
-- [ ] T012 [P] [US1] Write unit tests for authentication service in `backend/tests/services/test_auth_service.py`
-- [ ] T013 [P] [US1] Write integration tests for user registration and login endpoints in `backend/tests/api/test_auth.py`
-- [ ] T014 [P] [US1] Write end-to-end test for user login flow in `frontend/tests/e2e/test_auth_flow.spec.ts`
+- [x] T011 [P] [US1] Write unit tests for User model in `backend/tests/models/test_user.py`
+- [x] T012 [P] [US1] Write unit tests for authentication service in `backend/tests/services/test_auth_service.py`
+- [x] T013 [P] [US1] Write integration tests for user registration and login endpoints in `backend/tests/api/test_auth.py`
+- [x] T014 [P] [US1] Write end-to-end test for user login flow in `frontend/tests/e2e/test_auth_flow.spec.ts`
 
 # Launch models and initial frontend components for User Story 1 together:
-- [ ] T015 [P] [US1] Create User model using SQLModel in `backend/src/models/user.py`
-- [ ] T020 [P] [US1] Create Login page component in `frontend/src/pages/login.tsx`
-- [ ] T021 [P] [US1] Create Signup page component in `frontend/src/pages/signup.tsx`
-- [ ] T022 [P] [US1] Create Dashboard page component (placeholder) in `frontend/src/pages/dashboard.tsx`
+- [x] T015 [P] [US1] Create User model using SQLModel in `backend/src/models/user.py`
+- [x] T020 [P] [US1] Create Login page component in `frontend/src/pages/login.tsx`
+- [x] T021 [P] [US1] Create Signup page component in `frontend/src/pages/signup.tsx`
+- [x] T022 [P] [US1] Create Dashboard page component (placeholder) in `frontend/src/pages/dashboard.tsx`
 ```
 
 ---

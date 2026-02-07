@@ -27,7 +27,7 @@ description: "Task list for Backend Service (FastAPI) feature implementation"
 **Purpose**: Ensure JWT secret is securely configured for the backend.
 *Assumes general project setup (Phase 1 from 01-overview) and authentication dependencies (Phase 1 from 02-authentication) are complete.*
 
-- [ ] T001 Ensure `BETTER_AUTH_SECRET` is loaded securely as an environment variable in FastAPI app startup (e.g., `backend/src/config.py`)
+- [x] T001 Ensure `BETTER_AUTH_SECRET` is loaded securely as an environment variable in FastAPI app startup (e.g., `backend/src/config.py`)
 
 ---
 
@@ -36,8 +36,8 @@ description: "Task list for Backend Service (FastAPI) feature implementation"
 **Purpose**: Implement the core mechanism for JWT verification and user ID extraction.
 *Assumes authentication service and user model are available from 02-authentication.*
 
-- [ ] T002 Implement FastAPI dependency `get_current_user` to verify JWT, extract `user_id`, and return `User` object in `backend/src/dependencies.py`
-- [ ] T003 Ensure database session dependency is available for all API routes (e.g., in `backend/src/dependencies.py`)
+- [x] T002 Implement FastAPI dependency `get_current_user` to verify JWT, extract `user_id`, and return `User` object in `backend/src/dependencies.py`
+- [x] T003 Ensure database session dependency is available for all API routes (e.g., in `backend/src/dependencies.py`)
 
 **Checkpoint**: Foundational JWT verification and user access ready
 
@@ -53,16 +53,16 @@ description: "Task list for Backend Service (FastAPI) feature implementation"
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T004 [P] [US1] Write unit tests for `get_current_user` dependency (valid/invalid/expired token) in `backend/tests/dependencies/test_auth_dependency.py`
-- [ ] T005 [P] [US1] Write integration tests for a sample protected API endpoint (e.g., `GET /tasks`) with a valid JWT in `backend/tests/api/test_secure_access.py`
-- [ ] T006 [P] [US1] Write integration tests for a sample protected API endpoint with an invalid/missing JWT (expect 401 Unauthorized) in `backend/tests/api/test_secure_access.py`
-- [ ] T007 [P] [US1] Write integration tests for a task API endpoint to verify user isolation (attempt to access another user's task, expect 403 Forbidden or 404 Not Found) in `backend/tests/api/test_user_isolation.py`
+- [x] T004 [P] [US1] Write unit tests for `get_current_user` dependency (valid/invalid/expired token) in `backend/tests/dependencies/test_auth_dependency.py`
+- [x] T005 [P] [US1] Write integration tests for a sample protected API endpoint (e.g., `GET /tasks`) with a valid JWT in `backend/tests/api/test_secure_access.py`
+- [x] T006 [P] [US1] Write integration tests for a sample protected API endpoint with an invalid/missing JWT (expect 401 Unauthorized) in `backend/tests/api/test_secure_access.py`
+- [x] T007 [P] [US1] Write integration tests for a task API endpoint to verify user isolation (attempt to access another user's task, expect 403 Forbidden or 404 Not Found) in `backend/tests/api/test_user_isolation.py`
 
 ### Implementation for User Story 1
 
-- [ ] T008 [US1] Apply `Depends(get_current_user)` to all existing and new protected API routes (e.g., in `backend/src/api/tasks.py`, `backend/src/api/users.py`)
-- [ ] T009 [US1] Modify task CRUD operations in `backend/src/services/task_service.py` to accept `user_id` and filter all queries by it
-- [ ] T010 [US1] Update API endpoints in `backend/src/api/tasks.py` to pass the authenticated `user_id` to `TaskService` methods
+- [x] T008 [US1] Apply `Depends(get_current_user)` to all existing and new protected API routes (e.g., in `backend/src/api/tasks.py`, `backend/src/api/users.py`)
+- [x] T009 [US1] Modify task CRUD operations in `backend/src/services/task_service.py` to accept `user_id` and filter all queries by it
+- [x] T010 [US1] Update API endpoints in `backend/src/api/tasks.py` to pass the authenticated `user_id` to `TaskService` methods
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -72,12 +72,12 @@ description: "Task list for Backend Service (FastAPI) feature implementation"
 
 **Purpose**: Refine security features and backend robustness.
 
-- [ ] TXXX [P] Implement custom error messages for 401/403 responses to improve API consumer experience
-- [ ] TXXX Add logging for all unauthorized access attempts and security-related events
-- [ ] TXXX Implement global exception handling for authentication and authorization errors in `backend/src/main.py`
-- [ ] TXXX Review and harden JWT token handling (e.g., blacklist for invalidated tokens, if applicable)
-- [ ] TXXX Update API documentation to clearly state authentication requirements and expected error responses
-- [ ] TXXX Perform a security review of the backend service (manual or automated static analysis)
+- [x] TXXX [P] Implement custom error messages for 401/403 responses to improve API consumer experience
+- [x] TXXX Add logging for all unauthorized access attempts and security-related events
+- [x] TXXX Implement global exception handling for authentication and authorization errors in `backend/src/main.py`
+- [x] TXXX Review and harden JWT token handling (e.g., blacklist for invalidated tokens, if applicable)
+- [x] TXXX Update API documentation to clearly state authentication requirements and expected error responses
+- [x] TXXX Perform a security review of the backend service (manual or automated static analysis)
 
 ---
 
@@ -116,12 +116,12 @@ description: "Task list for Backend Service (FastAPI) feature implementation"
 
 ```bash
 # Developer A (Backend - Core Security Logic):
-- [ ] T004 [P] [US1] Write unit tests for `get_current_user` dependency (valid/invalid/expired token) in `backend/tests/dependencies/test_auth_dependency.py`
-- [ ] T008 [US1] Apply `Depends(get_current_user)` to all existing and new protected API routes (e.g., `backend/src/api/tasks.py`)
+- [x] T004 [P] [US1] Write unit tests for `get_current_user` dependency (valid/invalid/expired token) in `backend/tests/dependencies/test_auth_dependency.py`
+- [x] T008 [US1] Apply `Depends(get_current_user)` to all existing and new protected API routes (e.g., `backend/src/api/tasks.py`)
 
 # Developer B (Backend - Data Isolation and Testing):
-- [ ] T007 [P] [US1] Write integration tests for a task API endpoint to verify user isolation (attempt to access another user's task, expect 403 Forbidden or 404 Not Found) in `backend/tests/api/test_user_isolation.py`
-- [ ] T009 [US1] Modify task CRUD operations in `backend/src/services/task_service.py` to accept `user_id` and filter all queries by it
+- [x] T007 [P] [US1] Write integration tests for a task API endpoint to verify user isolation (attempt to access another user's task, expect 403 Forbidden or 404 Not Found) in `backend/tests/api/test_user_isolation.py`
+- [x] T009 [US1] Modify task CRUD operations in `backend/src/services/task_service.py` to accept `user_id` and filter all queries by it
 ```
 
 ---

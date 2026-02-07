@@ -27,7 +27,7 @@ description: "Task list for REST API Endpoints feature implementation"
 **Purpose**: Ensure necessary dependencies for API implementation are in place.
 *Assumes general project setup and core authentication setup are complete.*
 
-- [ ] T001 Ensure SQLModel and Uvicorn are installed in `backend/`
+- [x] T001 Ensure SQLModel and Uvicorn are installed in `backend/`
 
 ---
 
@@ -36,9 +36,9 @@ description: "Task list for REST API Endpoints feature implementation"
 **Purpose**: Implement core data model and service for tasks.
 *Assumes database connection and migration setup are complete.*
 
-- [ ] T002 [P] Define `Task` model with `user_id` foreign key in `backend/src/models/task.py`
-- [ ] T003 Implement `TaskService` for CRUD operations on tasks in `backend/src/services/task_service.py`
-- [ ] T004 Apply database migrations to create `tasks` table
+- [x] T002 [P] Define `Task` model with `user_id` foreign key in `backend/src/models/task.py`
+- [x] T003 Implement `TaskService` for CRUD operations on tasks in `backend/src/services/task_service.py`
+- [x] T004 Apply database migrations to create `tasks` table
 
 **Checkpoint**: Foundational task service ready
 
@@ -54,23 +54,23 @@ description: "Task list for REST API Endpoints feature implementation"
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T005 [P] [US1] Write unit tests for `Task` model in `backend/tests/models/test_task.py`
-- [ ] T006 [P] [US1] Write unit tests for `TaskService` CRUD operations in `backend/tests/services/test_task_service.py`
-- [ ] T007 [P] [US1] Write integration tests for creating a task with valid JWT in `backend/tests/api/test_tasks.py`
-- [ ] T008 [P] [US1] Write integration tests for accessing tasks without JWT (expect 401) in `backend/tests/api/test_tasks.py`
-- [ ] T009 [P] [US1] Write integration tests for reading, updating, and deleting tasks with valid JWT in `backend/tests/api/test_tasks.py`
-- [ ] T010 [P] [US1] Write integration tests for cross-user task access (expect denial) in `backend/tests/api/test_tasks.py`
+- [x] T005 [P] [US1] Write unit tests for `Task` model in `backend/tests/models/test_task.py`
+- [x] T006 [P] [US1] Write unit tests for `TaskService` CRUD operations in `backend/tests/services/test_task_service.py`
+- [x] T007 [P] [US1] Write integration tests for creating a task with valid JWT in `backend/tests/api/test_tasks.py`
+- [x] T008 [P] [US1] Write integration tests for accessing tasks without JWT (expect 401) in `backend/tests/api/test_tasks.py`
+- [x] T009 [P] [US1] Write integration tests for reading, updating, and deleting tasks with valid JWT in `backend/tests/api/test_tasks.py`
+- [x] T010 [P] [US1] Write integration tests for cross-user task access (expect denial) in `backend/tests/api/test_tasks.py`
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] Create FastAPI router for task endpoints (`/tasks`) in `backend/src/api/tasks.py`
-- [ ] T012 [US1] Implement endpoint for creating a task (`POST /tasks`) in `backend/src/api/tasks.py`
-- [ ] T013 [US1] Implement endpoint for listing all tasks for the authenticated user (`GET /tasks`) in `backend/src/api/tasks.py`
-- [ ] T014 [US1] Implement endpoint for retrieving a single task (`GET /tasks/{task_id}`) in `backend/src/api/tasks.py`
-- [ ] T015 [US1] Implement endpoint for updating a task (`PUT /tasks/{task_id}`) in `backend/src/api/tasks.py`
-- [ ] T016 [US1] Implement endpoint for deleting a task (`DELETE /tasks/{task_id}`) in `backend/src/api/tasks.py`
-- [ ] T017 [US1] Integrate JWT authentication dependency with all task endpoints in `backend/src/api/tasks.py`
-- [ ] T018 [US1] Ensure task queries are filtered by `user_id` extracted from JWT in `backend/src/services/task_service.py` and `backend/src/api/tasks.py`
+- [x] T011 [P] [US1] Create FastAPI router for task endpoints (`/tasks`) in `backend/src/api/tasks.py`
+- [x] T012 [US1] Implement endpoint for creating a task (`POST /tasks`) in `backend/src/api/tasks.py`
+- [x] T013 [US1] Implement endpoint for listing all tasks for the authenticated user (`GET /tasks`) in `backend/src/api/tasks.py`
+- [x] T014 [US1] Implement endpoint for retrieving a single task (`GET /tasks/{task_id}`) in `backend/src/api/tasks.py`
+- [x] T015 [US1] Implement endpoint for updating a task (`PUT /tasks/{task_id}`) in `backend/src/api/tasks.py`
+- [x] T016 [US1] Implement endpoint for deleting a task (`DELETE /tasks/{task_id}`) in `backend/src/api/tasks.py`
+- [x] T017 [US1] Integrate JWT authentication dependency with all task endpoints in `backend/src/api/tasks.py`
+- [x] T018 [US1] Ensure task queries are filtered by `user_id` extracted from JWT in `backend/src/services/task_service.py` and `backend/src/api/tasks.py`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -80,12 +80,12 @@ description: "Task list for REST API Endpoints feature implementation"
 
 **Purpose**: Improvements that affect API quality and security
 
-- [ ] TXXX [P] Generate/Update OpenAPI documentation for task APIs in `backend/docs/openapi.json`
-- [ ] TXXX Implement comprehensive input validation for all task API request bodies in `backend/src/schemas/task.py`
-- [ ] TXXX Enhance error handling for API endpoints (e.g., custom error responses for 404 Not Found, 400 Bad Request)
-- [ ] TXXX Implement rate limiting on task API endpoints (if not already done in 02-authentication)
-- [ ] TXXX Add logging for all API operations and errors in `backend/src/main.py`
-- [ ] TXXX Review and optimize database queries for task operations
+- [x] TXXX [P] Generate/Update OpenAPI documentation for task APIs in `backend/docs/openapi.json`
+- [x] TXXX Implement comprehensive input validation for all task API request bodies in `backend/src/schemas/task.py`
+- [x] TXXX Enhance error handling for API endpoints (e.g., custom error responses for 404 Not Found, 400 Bad Request)
+- [x] TXXX Implement rate limiting on task API endpoints (if not already done in 02-authentication)
+- [x] TXXX Add logging for all API operations and errors in `backend/src/main.py`
+- [x] TXXX Review and optimize database queries for task operations
 
 ---
 
@@ -126,15 +126,15 @@ description: "Task list for REST API Endpoints feature implementation"
 
 ```bash
 # Developer A (Backend - Core API Endpoints):
-- [ ] T011 [P] [US1] Create FastAPI router for task endpoints (`/tasks`) in `backend/src/api/tasks.py`
-- [ ] T012 [US1] Implement endpoint for creating a task (`POST /tasks`) in `backend/src/api/tasks.py`
-- [ ] T013 [US1] Implement endpoint for listing all tasks for the authenticated user (`GET /tasks`) in `backend/src/api/tasks.py`
+- [x] T011 [P] [US1] Create FastAPI router for task endpoints (`/tasks`) in `backend/src/api/tasks.py`
+- [x] T012 [US1] Implement endpoint for creating a task (`POST /tasks`) in `backend/src/api/tasks.py`
+- [x] T013 [US1] Implement endpoint for listing all tasks for the authenticated user (`GET /tasks`) in `backend/src/api/tasks.py`
 
 # Developer B (Backend - Remaining API Endpoints and Authentication Integration):
-- [ ] T014 [US1] Implement endpoint for retrieving a single task (`GET /tasks/{task_id}`) in `backend/src/api/tasks.py`
-- [ ] T015 [US1] Implement endpoint for updating a task (`PUT /tasks/{task_id}`) in `backend/src/api/tasks.py`
-- [ ] T016 [US1] Implement endpoint for deleting a task (`DELETE /tasks/{task_id}`) in `backend/src/api/tasks.py`
-- [ ] T017 [US1] Integrate JWT authentication dependency with all task endpoints in `backend/src/api/tasks.py`
+- [x] T014 [US1] Implement endpoint for retrieving a single task (`GET /tasks/{task_id}`) in `backend/src/api/tasks.py`
+- [x] T015 [US1] Implement endpoint for updating a task (`PUT /tasks/{task_id}`) in `backend/src/api/tasks.py`
+- [x] T016 [US1] Implement endpoint for deleting a task (`DELETE /tasks/{task_id}`) in `backend/src/api/tasks.py`
+- [x] T017 [US1] Integrate JWT authentication dependency with all task endpoints in `backend/src/api/tasks.py`
 ```
 
 ---

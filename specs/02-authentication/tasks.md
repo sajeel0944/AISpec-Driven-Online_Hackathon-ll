@@ -27,9 +27,9 @@ description: "Task list for Authentication (Better Auth + JWT) feature implement
 **Purpose**: Install dependencies and configure environment for authentication feature.
 *Assumes general project setup (Phase 1 from 01-overview) is complete.*
 
-- [ ] T001 Install `python-jose[cryptography]` and `passlib[bcrypt]` in `backend/`
-- [ ] T002 Install Next.js client-side auth library (if needed, e.g., `next-auth`) in `frontend/`
-- [ ] T003 Configure `BETTER_AUTH_SECRET` environment variable in `backend/.env` (or similar)
+- [x] T001 Install `python-jose[cryptography]` and `passlib[bcrypt]` in `backend/`
+- [x] T002 Install Next.js client-side auth library (if needed, e.g., `next-auth`) in `frontend/`
+- [x] T003 Configure `BETTER_AUTH_SECRET` environment variable in `backend/.env` (or similar)
 
 ---
 
@@ -38,10 +38,10 @@ description: "Task list for Authentication (Better Auth + JWT) feature implement
 **Purpose**: Implement core authentication mechanisms that MUST be complete before user stories.
 *Assumes database setup and basic API structure (Phase 2 from 01-overview) is complete.*
 
-- [ ] T004 [P] Define `User` model (if not already present) with password hashing support in `backend/src/models/user.py`
-- [ ] T005 Implement `AuthService` for handling password hashing, JWT encoding/decoding, and token validation in `backend/src/services/auth_service.py`
-- [ ] T006 Implement FastAPI dependency for current authenticated user extraction from JWT in `backend/src/dependencies.py`
-- [ ] T007 Create custom exception handlers for authentication errors in `backend/src/exceptions.py`
+- [x] T004 [P] Define `User` model (if not already present) with password hashing support in `backend/src/models/user.py`
+- [x] T005 Implement `AuthService` for handling password hashing, JWT encoding/decoding, and token validation in `backend/src/services/auth_service.py`
+- [x] T006 Implement FastAPI dependency for current authenticated user extraction from JWT in `backend/src/dependencies.py`
+- [x] T007 Create custom exception handlers for authentication errors in `backend/src/exceptions.py`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -57,18 +57,18 @@ description: "Task list for Authentication (Better Auth + JWT) feature implement
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T008 [P] [US1] Write unit tests for user creation logic in `backend/tests/services/test_user_creation.py`
-- [ ] T009 [P] [US1] Write integration tests for the signup endpoint with valid and duplicate data in `backend/tests/api/test_signup.py`
-- [ ] T010 [P] [US1] Write e2e test for successful user registration from frontend in `frontend/tests/e2e/test_signup_flow.spec.ts`
+- [x] T008 [P] [US1] Write unit tests for user creation logic in `backend/tests/services/test_user_creation.py`
+- [x] T009 [P] [US1] Write integration tests for the signup endpoint with valid and duplicate data in `backend/tests/api/test_signup.py`
+- [x] T010 [P] [US1] Write e2e test for successful user registration from frontend in `frontend/tests/e2e/test_signup_flow.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] Create FastAPI endpoint for user registration (`/auth/register`) in `backend/src/api/auth.py`
-- [ ] T012 [US1] Implement user creation and password hashing within `backend/src/services/user_service.py` (using `AuthService`)
-- [ ] T013 [US1] Return JWT upon successful registration in `backend/src/api/auth.py`
-- [ ] T014 [P] [US1] Develop signup form UI component in `frontend/src/components/SignupForm.tsx`
-- [ ] T015 [US1] Implement frontend service to call backend signup API in `frontend/src/services/auth.ts`
-- [ ] T016 [US1] Integrate signup form with frontend authentication service and handle success/error states in `frontend/src/pages/signup.tsx`
+- [x] T011 [P] [US1] Create FastAPI endpoint for user registration (`/auth/register`) in `backend/src/api/auth.py`
+- [x] T012 [US1] Implement user creation and password hashing within `backend/src/services/user_service.py` (using `AuthService`)
+- [x] T013 [US1] Return JWT upon successful registration in `backend/src/api/auth.py`
+- [x] T014 [P] [US1] Develop signup form UI component in `frontend/src/components/SignupForm.tsx`
+- [x] T015 [US1] Implement frontend service to call backend signup API in `frontend/src/services/auth.ts`
+- [x] T016 [US1] Integrate signup form with frontend authentication service and handle success/error states in `frontend/src/pages/signup.tsx`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -84,18 +84,18 @@ description: "Task list for Authentication (Better Auth + JWT) feature implement
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T017 [P] [US2] Write unit tests for user authentication logic in `backend/tests/services/test_auth_service_signin.py`
-- [ ] T018 [P] [US2] Write integration tests for the signin endpoint with valid and invalid credentials in `backend/tests/api/test_signin.py`
-- [ ] T019 [P] [US2] Write e2e test for successful user login and protected route access from frontend in `frontend/tests/e2e/test_signin_flow.spec.ts`
+- [x] T017 [P] [US2] Write unit tests for user authentication logic in `backend/tests/services/test_auth_service_signin.py`
+- [x] T018 [P] [US2] Write integration tests for the signin endpoint with valid and invalid credentials in `backend/tests/api/test_signin.py`
+- [x] T019 [P] [US2] Write e2e test for successful user login and protected route access from frontend in `frontend/tests/e2e/test_signin_flow.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T020 [P] [US2] Create FastAPI endpoint for user login (`/auth/login`) in `backend/src/api/auth.py`
-- [ ] T021 [US2] Implement user credentials verification and JWT generation upon successful login in `backend/src/services/auth_service.py`
-- [ ] T022 [P] [US2] Develop login form UI component in `frontend/src/components/LoginForm.tsx`
-- [ ] T023 [US2] Implement frontend service to call backend login API in `frontend/src/services/auth.ts`
-- [ ] T024 [US2] Integrate login form with frontend authentication service, store JWT securely (e.g., http-only cookies), and redirect on success in `frontend/src/pages/login.tsx`
-- [ ] T025 [US2] Implement protected routes in Next.js frontend to restrict access based on authentication status in `frontend/src/middleware.ts` or `frontend/src/utils/auth.ts`
+- [x] T020 [P] [US2] Create FastAPI endpoint for user login (`/auth/login`) in `backend/src/api/auth.py`
+- [x] T021 [US2] Implement user credentials verification and JWT generation upon successful login in `backend/src/services/auth_service.py`
+- [x] T022 [P] [US2] Develop login form UI component in `frontend/src/components/LoginForm.tsx`
+- [x] T023 [US2] Implement frontend service to call backend login API in `frontend/src/services/auth.ts`
+- [x] T024 [US2] Integrate login form with frontend authentication service, store JWT securely (e.g., http-only cookies), and redirect on success in `frontend/src/pages/login.tsx`
+- [x] T025 [US2] Implement protected routes in Next.js frontend to restrict access based on authentication status in `frontend/src/middleware.ts` or `frontend/src/utils/auth.ts`
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -105,12 +105,12 @@ description: "Task list for Authentication (Better Auth + JWT) feature implement
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] TXXX [P] Implement JWT token refresh mechanism in `backend/src/api/auth.py` and `frontend/src/services/auth.ts`
-- [ ] TXXX Add password reset functionality (backend API and frontend UI)
-- [ ] TXXX Implement rate limiting for authentication endpoints in `backend/src/middleware/rate_limit.py`
-- [ ] TXXX Enhance error handling and user feedback for all authentication flows
-- [ ] TXXX Update API documentation (e.g., OpenAPI spec) for authentication endpoints
-- [ ] TXXX Security audit of authentication implementation
+- [x] TXXX [P] Implement JWT token refresh mechanism in `backend/src/api/auth.py` and `frontend/src/services/auth.ts`
+- [x] TXXX Add password reset functionality (backend API and frontend UI)
+- [x] TXXX Implement rate limiting for authentication endpoints in `backend/src/middleware/rate_limit.py`
+- [x] TXXX Enhance error handling and user feedback for all authentication flows
+- [x] TXXX Update API documentation (e.g., OpenAPI spec) for authentication endpoints
+- [x] TXXX Security audit of authentication implementation
 
 ---
 
@@ -153,17 +153,17 @@ description: "Task list for Authentication (Better Auth + JWT) feature implement
 
 ```bash
 # Developer A (Backend - US1 & US2):
-- [ ] T011 [P] [US1] Create FastAPI endpoint for user registration (`/auth/register`) in `backend/src/api/auth.py`
-- [ ] T020 [P] [US2] Create FastAPI endpoint for user login (`/auth/login`) in `backend/src/api/auth.py`
+- [x] T011 [P] [US1] Create FastAPI endpoint for user registration (`/auth/register`) in `backend/src/api/auth.py`
+- [x] T020 [P] [US2] Create FastAPI endpoint for user login (`/auth/login`) in `backend/src/api/auth.py`
 
 # Developer B (Frontend - US1 & US2):
-- [ ] T014 [P] [US1] Develop signup form UI component in `frontend/src/components/SignupForm.tsx`
-- [ ] T022 [P] [US2] Develop login form UI component in `frontend/src/components/LoginForm.tsx`
+- [x] T014 [P] [US1] Develop signup form UI component in `frontend/src/components/SignupForm.tsx`
+- [x] T022 [P] [US2] Develop login form UI component in `frontend/src/components/LoginForm.tsx`
 
 # Shared (Backend Services):
-- [ ] T004 [P] Define `User` model (if not already present) with password hashing support in `backend/src/models/user.py`
-- [ ] T008 [P] [US1] Write unit tests for user creation logic in `backend/tests/services/test_user_creation.py`
-- [ ] T017 [P] [US2] Write unit tests for user authentication logic in `backend/tests/services/test_auth_service_signin.py`
+- [x] T004 [P] Define `User` model (if not already present) with password hashing support in `backend/src/models/user.py`
+- [x] T008 [P] [US1] Write unit tests for user creation logic in `backend/tests/services/test_user_creation.py`
+- [x] T017 [P] [US2] Write unit tests for user authentication logic in `backend/tests/services/test_auth_service_signin.py`
 ```
 
 ---

@@ -22,9 +22,9 @@
 
 **Purpose**: Create initial Dockerfiles and `docker-compose.yaml` file.
 
-- [ ] T001 Create `Dockerfile` for the `frontend` service in `frontend/Dockerfile`.
-- [ ] T002 Create `Dockerfile` for the `backend` service in `backend/Dockerfile`.
-- [ ] T003 Create `docker-compose.yaml` in the project root.
+- [x] T001 Create `Dockerfile` for the `frontend` service in `frontend/Dockerfile`.
+- [x] T002 Create `Dockerfile` for the `backend` service in `backend/Dockerfile`.
+- [x] T003 Create `docker-compose.yaml` in the project root.
 
 ---
 
@@ -34,12 +34,12 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Configure `frontend/Dockerfile` to install dependencies, build Next.js application, expose port `3000`, and start the production-ready server (`frontend/Dockerfile`).
-- [ ] T005 Configure `backend/Dockerfile` to install Python dependencies, copy application source code, expose port `8000`, and run FastAPI using a production server (e.g., Uvicorn) (`backend/Dockerfile`).
-- [ ] T006 Define `frontend` service in `docker-compose.yaml`, specifying build context (`./frontend`), port mapping (`3000:3000`), environment variables (`NEXT_PUBLIC_API_BASE_URL`), and `depends_on` the `backend` service (`docker-compose.yaml`).
-- [ ] T007 Define `backend` service in `docker-compose.yaml`, specifying build context (`./backend`), port mapping (`8000:8000`), and placeholder environment variables (`OPENAI_API_KEY`, `DATABASE_URL`, `QDRANT_URL`, `QDRANT_API_KEY`) (`docker-compose.yaml`).
-- [ ] T008 Define a shared Docker network for `frontend` and `backend` services in `docker-compose.yaml` (`docker-compose.yaml`).
-- [ ] T009 Update `NEXT_PUBLIC_API_BASE_URL` in `docker-compose.yaml` for the `frontend` service to `http://backend:8000` to enable inter-service communication (`docker-compose.yaml`).
+- [x] T004 Configure `frontend/Dockerfile` to install dependencies, build Next.js application, expose port `3000`, and start the production-ready server (`frontend/Dockerfile`).
+- [x] T005 Configure `backend/Dockerfile` to install Python dependencies, copy application source code, expose port `8000`, and run FastAPI using a production server (e.g., Uvicorn) (`backend/Dockerfile`).
+- [x] T006 Define `frontend` service in `docker-compose.yaml`, specifying build context (`./frontend`), port mapping (`3000:3000`), environment variables (`NEXT_PUBLIC_API_BASE_URL`), and `depends_on` the `backend` service (`docker-compose.yaml`).
+- [x] T007 Define `backend` service in `docker-compose.yaml`, specifying build context (`./backend`), port mapping (`8000:8000`), and placeholder environment variables (`OPENAI_API_KEY`, `DATABASE_URL`, `QDRANT_URL`, `QDRANT_API_KEY`) (`docker-compose.yaml`).
+- [x] T008 Define a shared Docker network for `frontend` and `backend` services in `docker-compose.yaml` (`docker-compose.yaml`).
+- [x] T009 Update `NEXT_PUBLIC_API_BASE_URL` in `docker-compose.yaml` for the `frontend` service to `http://backend:8000` to enable inter-service communication (`docker-compose.yaml`).
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -53,10 +53,10 @@
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Execute `docker-compose up --build` from the project root and verify that both the frontend and backend containers start successfully.
-- [ ] T011 [US1] Access the frontend application in a web browser (e.g., `http://localhost:3000`) and verify that the UI loads without errors.
-- [ ] T012 [US1] Interact with the application to perform an action that requires frontend-backend communication (e.g., create a todo, send a chat message) and verify that API calls are successful.
-- [ ] T013 [US1] Inspect container logs or network requests to confirm that the frontend is communicating with the backend using the Docker service name (`backend`) and that no hardcoded `localhost` URLs are used.
+- [x] T010 [US1] Execute `docker-compose up --build` from the project root and verify that both the frontend and backend containers start successfully.
+- [x] T011 [US1] Access the frontend application in a web browser (e.g., `http://localhost:3000`) and verify that the UI loads without errors.
+- [x] T012 [US1] Interact with the application to perform an action that requires frontend-backend communication (e.g., create a todo, send a chat message) and verify that API calls are successful.
+- [x] T013 [US1] Inspect container logs or network requests to confirm that the frontend is communicating with the backend using the Docker service name (`backend`) and that no hardcoded `localhost` URLs are used.
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -66,7 +66,7 @@
 
 **Purpose**: Enhance usability and documentation for the Dockerized application.
 
-- [ ] T014 Add a new section to the project's main `README.md` (at the root level) explaining how to set up and run the application using Docker Compose, including prerequisites and key commands.
+- [x] T014 Add a new section to the project's main `README.md` (at the root level) explaining how to set up and run the application using Docker Compose, including prerequisites and key commands.
 
 ---
 

@@ -27,9 +27,9 @@ description: "Task list for Frontend Application (Next.js) feature implementatio
 **Purpose**: Initialize the Next.js project and configure basic styling and API client.
 *Assumes `frontend/` directory is created and Next.js installed from 01-overview setup.*
 
-- [ ] T001 Configure Tailwind CSS in `frontend/tailwind.config.js` and `frontend/postcss.config.js`
-- [ ] T002 Setup API client (e.g., Axios or native Fetch wrapper) for making authenticated requests in `frontend/src/services/api.ts`
-- [ ] T003 Configure global error boundary or error handling for API requests in `frontend/src/components/ErrorBoundary.tsx`
+- [x] T001 Configure Tailwind CSS in `frontend/tailwind.config.js` and `frontend/postcss.config.js`
+- [x] T002 Setup API client (e.g., Axios or native Fetch wrapper) for making authenticated requests in `frontend/src/services/api.ts`
+- [x] T003 Configure global error boundary or error handling for API requests in `frontend/src/components/ErrorBoundary.tsx`
 
 ---
 
@@ -38,10 +38,10 @@ description: "Task list for Frontend Application (Next.js) feature implementatio
 **Purpose**: Establish core frontend infrastructure for authentication state and routing.
 *Assumes backend authentication API endpoints are ready from 02-authentication.*
 
-- [ ] T004 Implement an authentication context/provider to manage JWT token, user state, and auth actions (login/logout) in `frontend/src/context/AuthContext.tsx`
-- [ ] T005 Implement client-side routing protection for authenticated/unauthenticated routes using Next.js middleware or HOCs in `frontend/src/middleware.ts` or `frontend/src/hocs/withAuth.tsx`
-- [ ] T006 Develop responsive header and footer components in `frontend/src/components/layout/Header.tsx`, `frontend/src/components/layout/Footer.tsx`
-- [ ] T007 Design a basic global layout component that includes header, footer, and authentication state handling in `frontend/src/components/layout/Layout.tsx`
+- [x] T004 Implement an authentication context/provider to manage JWT token, user state, and auth actions (login/logout) in `frontend/src/context/AuthContext.tsx`
+- [x] T005 Implement client-side routing protection for authenticated/unauthenticated routes using Next.js middleware or HOCs in `frontend/src/middleware.ts` or `frontend/src/hocs/withAuth.tsx`
+- [x] T006 Develop responsive header and footer components in `frontend/src/components/layout/Header.tsx`, `frontend/src/components/layout/Footer.tsx`
+- [x] T007 Design a basic global layout component that includes header, footer, and authentication state handling in `frontend/src/components/layout/Layout.tsx`
 
 **Checkpoint**: Core frontend infrastructure for authentication and layout ready.
 
@@ -57,27 +57,27 @@ description: "Task list for Frontend Application (Next.js) feature implementatio
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T008 [P] [US1] Write unit tests for `LoginForm` component in `frontend/tests/components/LoginForm.test.tsx`
-- [ ] T009 [P] [US1] Write unit tests for `SignupForm` component in `frontend/tests/components/SignupForm.test.tsx`
-- [ ] T010 [P] [US1] Write e2e test for successful user login and dashboard display in `frontend/tests/e2e/login.spec.ts`
-- [ ] T011 [P] [US1] Write e2e test for creating a new task and verifying its presence on the dashboard in `frontend/tests/e2e/create_task.spec.ts`
-- [ ] T012 [P] [US1] Write e2e test for responsive behavior of dashboard on mobile/desktop viewports in `frontend/tests/e2e/responsive.spec.ts`
+- [x] T008 [P] [US1] Write unit tests for `LoginForm` component in `frontend/tests/components/LoginForm.test.tsx`
+- [x] T009 [P] [US1] Write unit tests for `SignupForm` component in `frontend/tests/components/SignupForm.test.tsx`
+- [x] T010 [P] [US1] Write e2e test for successful user login and dashboard display in `frontend/tests/e2e/login.spec.ts`
+- [x] T011 [P] [US1] Write e2e test for creating a new task and verifying its presence on the dashboard in `frontend/tests/e2e/create_task.spec.ts`
+- [x] T012 [P] [US1] Write e2e test for responsive behavior of dashboard on mobile/desktop viewports in `frontend/tests/e2e/responsive.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T013 [P] [US1] Develop `LoginForm` component (if not already done in 02-authentication) in `frontend/src/components/forms/LoginForm.tsx`
-- [ ] T014 [P] [US1] Develop `SignupForm` component (if not already done in 02-authentication) in `frontend/src/components/forms/SignupForm.tsx`
-- [ ] T015 [US1] Create Login page using `LoginForm` and `AuthContext` in `frontend/src/app/login/page.tsx`
-- [ ] T016 [US1] Create Signup page using `SignupForm` and `AuthContext` in `frontend/src/app/signup/page.tsx`
-- [ ] T017 [P] [US1] Develop `TaskItem` component for displaying a single task in `frontend/src/components/tasks/TaskItem.tsx`
-- [ ] T018 [P] [US1] Develop `TaskList` component for displaying multiple tasks in `frontend/src/components/tasks/TaskList.tsx`
-- [ ] T019 [P] [US1] Develop `TaskForm` component for creating/editing tasks in `frontend/src/components/forms/TaskForm.tsx`
-- [ ] T020 [US1] Create Dashboard page to fetch and display tasks using `TaskList` and `TaskForm` in `frontend/src/app/dashboard/page.tsx`
-- [ ] T021 [US1] Implement task fetching logic (GET /tasks) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
-- [ ] T022 [US1] Implement task creation logic (POST /tasks) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
-- [ ] T023 [US1] Implement task update logic (PUT /tasks/{id}) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
-- [ ] T024 [US1] Implement task deletion logic (DELETE /tasks/{id}) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
-- [ ] T025 [US1] Ensure all pages and components are responsive using Tailwind CSS and provide a consistent user experience on mobile and desktop.
+- [x] T013 [P] [US1] Develop `LoginForm` component (if not already done in 02-authentication) in `frontend/src/components/forms/LoginForm.tsx`
+- [x] T014 [P] [US1] Develop `SignupForm` component (if not already done in 02-authentication) in `frontend/src/components/forms/SignupForm.tsx`
+- [x] T015 [US1] Create Login page using `LoginForm` and `AuthContext` in `frontend/src/app/login/page.tsx`
+- [x] T016 [US1] Create Signup page using `SignupForm` and `AuthContext` in `frontend/src/app/signup/page.tsx`
+- [x] T017 [P] [US1] Develop `TaskItem` component for displaying a single task in `frontend/src/components/tasks/TaskItem.tsx`
+- [x] T018 [P] [US1] Develop `TaskList` component for displaying multiple tasks in `frontend/src/components/tasks/TaskList.tsx`
+- [x] T019 [P] [US1] Develop `TaskForm` component for creating/editing tasks in `frontend/src/components/forms/TaskForm.tsx`
+- [x] T020 [US1] Create Dashboard page to fetch and display tasks using `TaskList` and `TaskForm` in `frontend/src/app/dashboard/page.tsx`
+- [x] T021 [US1] Implement task fetching logic (GET /tasks) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
+- [x] T022 [US1] Implement task creation logic (POST /tasks) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
+- [x] T023 [US1] Implement task update logic (PUT /tasks/{id}) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
+- [x] T024 [US1] Implement task deletion logic (DELETE /tasks/{id}) using API client and `AuthContext` in `frontend/src/services/taskService.ts`
+- [x] T025 [US1] Ensure all pages and components are responsive using Tailwind CSS and provide a consistent user experience on mobile and desktop.
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -87,12 +87,12 @@ description: "Task list for Frontend Application (Next.js) feature implementatio
 
 **Purpose**: Refine UI/UX, improve performance, and enhance robustness.
 
-- [ ] TXXX [P] Implement loading states and skeleton loaders for data fetching in `frontend/src/components/ui/LoadingSpinner.tsx`
-- [ ] TXXX Enhance error feedback and notifications for API operations in `frontend/src/utils/notifications.ts`
-- [ ] TXXX Optimize image and asset loading for faster performance in `frontend/public/`
-- [ ] TXXX Improve accessibility (ARIA attributes, keyboard navigation) for all UI components
-- [ ] TXXX Implement internationalization (i18n) if required
-- [ ] TXXX Conduct cross-browser compatibility testing (Safari, Firefox, Edge, Chrome)
+- [x] TXXX [P] Implement loading states and skeleton loaders for data fetching in `frontend/src/components/ui/LoadingSpinner.tsx`
+- [x] TXXX Enhance error feedback and notifications for API operations in `frontend/src/utils/notifications.ts`
+- [x] TXXX Optimize image and asset loading for faster performance in `frontend/public/`
+- [x] TXXX Improve accessibility (ARIA attributes, keyboard navigation) for all UI components
+- [x] TXXX Implement internationalization (i18n) if required
+- [x] TXXX Conduct cross-browser compatibility testing (Safari, Firefox, Edge, Chrome)
 
 ---
 
@@ -133,16 +133,16 @@ description: "Task list for Frontend Application (Next.js) feature implementatio
 
 ```bash
 # Developer A (Frontend - Auth UI & Services):
-- [ ] T013 [P] [US1] Develop `LoginForm` component in `frontend/src/components/forms/LoginForm.tsx`
-- [ ] T014 [P] [US1] Develop `SignupForm` component in `frontend/src/components/forms/SignupForm.tsx`
-- [ ] T015 [US1] Create Login page in `frontend/src/app/login/page.tsx`
-- [ ] T016 [US1] Create Signup page in `frontend/src/app/signup/page.tsx`
+- [x] T013 [P] [US1] Develop `LoginForm` component in `frontend/src/components/forms/LoginForm.tsx`
+- [x] T014 [P] [US1] Develop `SignupForm` component in `frontend/src/components/forms/SignupForm.tsx`
+- [x] T015 [US1] Create Login page in `frontend/src/app/login/page.tsx`
+- [x] T016 [US1] Create Signup page in `frontend/src/app/signup/page.tsx`
 
 # Developer B (Frontend - Task UI & Services):
-- [ ] T017 [P] [US1] Develop `TaskItem` component in `frontend/src/components/tasks/TaskItem.tsx`
-- [ ] T018 [P] [US1] Develop `TaskList` component in `frontend/src/components/tasks/TaskList.tsx`
-- [ ] T019 [P] [US1] Develop `TaskForm` component in `frontend/src/components/forms/TaskForm.tsx`
-- [ ] T020 [US1] Create Dashboard page to fetch and display tasks in `frontend/src/app/dashboard/page.tsx`
+- [x] T017 [P] [US1] Develop `TaskItem` component in `frontend/src/components/tasks/TaskItem.tsx`
+- [x] T018 [P] [US1] Develop `TaskList` component in `frontend/src/components/tasks/TaskList.tsx`
+- [x] T019 [P] [US1] Develop `TaskForm` component in `frontend/src/components/forms/TaskForm.tsx`
+- [x] T020 [US1] Create Dashboard page to fetch and display tasks in `frontend/src/app/dashboard/page.tsx`
 ```
 
 ---

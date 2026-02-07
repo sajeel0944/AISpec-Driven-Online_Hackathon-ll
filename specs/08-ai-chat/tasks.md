@@ -75,12 +75,12 @@ The tasks.md should be immediately executable - each task must be specific enoug
 Every task MUST strictly follow this format:
 
 ```text
-- [ ] [TaskID] [P?] [Story?] Description with file path
+- [x] [TaskID] [P?] [Story?] Description with file path
 ```
 
 **Format Components**:
 
-1. **Checkbox**: ALWAYS start with `- [ ]` (markdown checkbox)
+1. **Checkbox**: ALWAYS start with `- [x]` (markdown checkbox)
 2. **Task ID**: Sequential number (T001, T002, T003...) in execution order
 3. **[P] marker**: Include ONLY if task is parallelizable (different files, no dependencies on incomplete tasks)
 4. **[Story] label**: REQUIRED for user story phase tasks only
@@ -93,14 +93,14 @@ Every task MUST strictly follow this format:
 
 **Examples**:
 
-- ✅ CORRECT: `- [ ] T001 Create project structure per implementation plan`
-- ✅ CORRECT: `- [ ] T005 [P] Implement authentication middleware in src/middleware/auth.py`
-- ✅ CORRECT: `- [ ] T012 [P] [US1] Create User model in src/models/user.py`
-- ✅ CORRECT: `- [ ] T014 [US1] Implement UserService in src/services/user_service.py`
-- ❌ WRONG: `- [ ] Create User model` (missing ID and Story label)
+- ✅ CORRECT: `- [x] T001 Create project structure per implementation plan`
+- ✅ CORRECT: `- [x] T005 [P] Implement authentication middleware in src/middleware/auth.py`
+- ✅ CORRECT: `- [x] T012 [P] [US1] Create User model in src/models/user.py`
+- ✅ CORRECT: `- [x] T014 [US1] Implement UserService in src/services/user_service.py`
+- ❌ WRONG: `- [x] Create User model` (missing ID and Story label)
 - ❌ WRONG: `T001 [US1] Create model` (missing checkbox)
-- ❌ WRONG: `- [ ] [US1] Create User model` (missing Task ID)
-- ❌ WRONG: `- [ ] T001 [US1] Create model` (missing file path)
+- ❌ WRONG: `- [x] [US1] Create User model` (missing Task ID)
+- ❌ WRONG: `- [x] T001 [US1] Create model` (missing file path)
 
 ### Task Organization
 

@@ -27,7 +27,7 @@ description: "Task list for Security & User Isolation feature implementation"
 **Purpose**: Ensure foundational security configurations are in place.
 *Assumes JWT secret is configured (from 02-authentication) and JWT verification middleware is implemented (from 04-backend).*
 
-- [ ] T001 Verify `BETTER_AUTH_SECRET` is securely configured and accessible in the backend application.
+- [x] T001 Verify `BETTER_AUTH_SECRET` is securely configured and accessible in the backend application.
 
 ---
 
@@ -36,8 +36,8 @@ description: "Task list for Security & User Isolation feature implementation"
 **Purpose**: Establish the core mechanism for user identification and data filtering within services.
 *Assumes `User` model is defined and `get_current_user` dependency is implemented.*
 
-- [ ] T002 Ensure `User` model (from `backend/src/models/user.py`) is fully integrated and accessible for service layer operations.
-- [ ] T003 [P] Review and adapt existing service methods (e.g., `TaskService` in `backend/src/services/task_service.py`) to consistently accept and utilize an authenticated `user_id` for data retrieval and modification.
+- [x] T002 Ensure `User` model (from `backend/src/models/user.py`) is fully integrated and accessible for service layer operations.
+- [x] T003 [P] Review and adapt existing service methods (e.g., `TaskService` in `backend/src/services/task_service.py`) to consistently accept and utilize an authenticated `user_id` for data retrieval and modification.
 
 **Checkpoint**: Core user identification and service-level filtering mechanisms are ready.
 
@@ -53,16 +53,16 @@ description: "Task list for Security & User Isolation feature implementation"
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T004 [P] [US1] Write integration tests to attempt reading another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
-- [ ] T005 [P] [US1] Write integration tests to attempt updating another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
-- [ ] T006 [P] [US1] Write integration tests to attempt deleting another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
-- [ ] T007 [P] [US1] Write unit tests for `TaskService` filtering logic to ensure `user_id` is always applied in `backend/tests/services/test_task_service_isolation.py`
+- [x] T004 [P] [US1] Write integration tests to attempt reading another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
+- [x] T005 [P] [US1] Write integration tests to attempt updating another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
+- [x] T006 [P] [US1] Write integration tests to attempt deleting another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
+- [x] T007 [P] [US1] Write unit tests for `TaskService` filtering logic to ensure `user_id` is always applied in `backend/tests/services/test_task_service_isolation.py`
 
 ### Implementation for User Story 1
 
-- [ ] T008 [US1] Update all task-related API endpoints in `backend/src/api/tasks.py` to use the authenticated `user_id` obtained from the JWT for all `TaskService` calls.
-- [ ] T009 [US1] Ensure `TaskService` methods (`get`, `update`, `delete`) strictly filter tasks by `user_id`, returning `None` or raising an appropriate exception if a task does not belong to the authenticated user in `backend/src/services/task_service.py`.
-- [ ] T010 [US1] Implement custom `HTTPException` handlers for `403 Forbidden` for data isolation violations and ensure appropriate HTTP status codes are returned from API endpoints in `backend/src/exceptions.py` or directly in `backend/src/api/tasks.py`.
+- [x] T008 [US1] Update all task-related API endpoints in `backend/src/api/tasks.py` to use the authenticated `user_id` obtained from the JWT for all `TaskService` calls.
+- [x] T009 [US1] Ensure `TaskService` methods (`get`, `update`, `delete`) strictly filter tasks by `user_id`, returning `None` or raising an appropriate exception if a task does not belong to the authenticated user in `backend/src/services/task_service.py`.
+- [x] T010 [US1] Implement custom `HTTPException` handlers for `403 Forbidden` for data isolation violations and ensure appropriate HTTP status codes are returned from API endpoints in `backend/src/exceptions.py` or directly in `backend/src/api/tasks.py`.
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -72,12 +72,12 @@ description: "Task list for Security & User Isolation feature implementation"
 
 **Purpose**: Enhance overall security posture and address potential vulnerabilities.
 
-- [ ] TXXX [P] Implement rate limiting for all sensitive API endpoints (`/auth/*`, `/tasks/*`) in `backend/src/middleware/rate_limit.py`
-- [ ] TXXX Add comprehensive logging for all security-related events (e.g., failed authentication, unauthorized access attempts)
-- [ ] TXXX Conduct a security code review of all authentication and authorization logic
-- [ ] TXXX Implement protection against common web vulnerabilities (XSS, CSRF, SQL Injection) where applicable
-- [ ] TXXX Explore and implement security headers for API responses
-- [ ] TXXX Document security policies and guidelines for future development
+- [x] TXXX [P] Implement rate limiting for all sensitive API endpoints (`/auth/*`, `/tasks/*`) in `backend/src/middleware/rate_limit.py`
+- [x] TXXX Add comprehensive logging for all security-related events (e.g., failed authentication, unauthorized access attempts)
+- [x] TXXX Conduct a security code review of all authentication and authorization logic
+- [x] TXXX Implement protection against common web vulnerabilities (XSS, CSRF, SQL Injection) where applicable
+- [x] TXXX Explore and implement security headers for API responses
+- [x] TXXX Document security policies and guidelines for future development
 
 ---
 
@@ -115,12 +115,12 @@ description: "Task list for Security & User Isolation feature implementation"
 
 ```bash
 # Developer A (Backend - Core Service Logic):
-- [ ] T007 [P] [US1] Write unit tests for `TaskService` filtering logic to ensure `user_id` is always applied in `backend/tests/services/test_task_service_isolation.py`
-- [ ] T009 [US1] Ensure `TaskService` methods (`get`, `update`, `delete`) strictly filter tasks by `user_id`, returning `None` or raising an appropriate exception if a task does not belong to the authenticated user in `backend/src/services/task_service.py`.
+- [x] T007 [P] [US1] Write unit tests for `TaskService` filtering logic to ensure `user_id` is always applied in `backend/tests/services/test_task_service_isolation.py`
+- [x] T009 [US1] Ensure `TaskService` methods (`get`, `update`, `delete`) strictly filter tasks by `user_id`, returning `None` or raising an appropriate exception if a task does not belong to the authenticated user in `backend/src/services/task_service.py`.
 
 # Developer B (Backend - API Integration and Error Handling):
-- [ ] T004 [P] [US1] Write integration tests to attempt reading another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
-- [ ] T008 [US1] Update all task-related API endpoints in `backend/src/api/tasks.py` to use the authenticated `user_id` obtained from the JWT for all `TaskService` calls.
+- [x] T004 [P] [US1] Write integration tests to attempt reading another user's task (expect 403 Forbidden or 404 Not Found) in `backend/tests/security/test_data_isolation.py`
+- [x] T008 [US1] Update all task-related API endpoints in `backend/src/api/tasks.py` to use the authenticated `user_id` obtained from the JWT for all `TaskService` calls.
 ```
 
 ---
